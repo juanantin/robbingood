@@ -15,8 +15,8 @@ export const siteConfig = {
 
   contractAddress: "0xc11db44f485040c7dc2c6df1fdf001ec180b88e1",
 
-  // TODO: replace with the real DEX swap link (Uniswap / Raydium / etc.)
-  dexUrl: "https://TODO-set-your-dex-swap-link.example",
+  dexUrl:
+    "https://app.uniswap.org/swap?chain=robinhood&inputCurrency=NATIVE&outputCurrency=0xc11db44f485040c7dc2c6df1fdf001ec180b88e1",
 
   // TODO: replace with the real Dexscreener (or other chart) pair URL.
   // Until this is a real dexscreener.com/... pair URL, the site shows a
