@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     title,
     description,
     type: "website",
-    // TODO: replace with a real hosted OG image (1200x630) once the logo is ready
-    images: ["/og-image.svg"],
+    // TODO: crop/resize to the standard 1200x630 OG ratio for best rendering on all platforms
+    images: ["/hero-bg.webp"],
   },
   twitter: {
     card: "summary_large_image",

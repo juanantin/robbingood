@@ -15,16 +15,6 @@ const floaters = [
 export function FloatingBackground() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      {/* forest silhouette */}
-      <svg
-        className="absolute bottom-0 left-0 w-full text-forest-950/70"
-        viewBox="0 0 1440 220"
-        preserveAspectRatio="none"
-        fill="currentColor"
-      >
-        <path d="M0 220V120l40-40 30 30 40-60 50 50 30-90 60 80 40-40 50 60 30-30 60 70 40-50 50 40 30-70 60 90 40-30 40 50V220Z" />
-      </svg>
-
       {floaters.map(({ Icon, top, left, size, delay, duration, rotate }, i) => (
         <motion.div
           key={i}

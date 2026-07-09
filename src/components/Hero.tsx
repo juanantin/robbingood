@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Button } from "./ui/Button";
@@ -15,7 +16,15 @@ const stats = [
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-forest-texture pt-20 pb-28 sm:pt-28 sm:pb-36">
+    <section id="top" className="relative overflow-hidden bg-forest-950 pt-20 pb-28 sm:pt-28 sm:pb-36">
+      <Image
+        src="/hero-bg.webp"
+        alt=""
+        fill
+        priority
+        className="object-cover object-[65%_center] sm:object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-forest-950/85 via-forest-950/60 to-forest-950/95" />
       <FloatingBackground />
 
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
