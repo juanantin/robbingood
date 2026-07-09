@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { Button } from "./ui/Button";
 import { XIcon, TelegramIcon } from "./icons";
@@ -18,8 +19,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-forest-800/60 bg-forest-950/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <a href="#top" className="font-display flex items-center gap-2 text-lg font-bold text-parchment-50">
-          <span className="text-2xl">🏹</span>
+        <a href="#top" className="font-display flex items-center gap-2 text-lg font-bold text-gold-300">
+          <Image src="/icon.png" alt="" width={32} height={32} className="h-8 w-8" />
           Robbin Good
         </a>
 

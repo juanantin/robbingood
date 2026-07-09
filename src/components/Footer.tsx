@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { CopyAddressPill } from "./CopyAddressPill";
 import { XIcon, TelegramIcon } from "./icons";
@@ -7,8 +8,8 @@ export function Footer() {
     <footer className="bg-forest-950 py-14 text-parchment-200">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-6 text-center">
-          <a href="#top" className="font-display flex items-center gap-2 text-lg font-bold text-parchment-50">
-            <span className="text-2xl">🏹</span>
+          <a href="#top" className="font-display flex items-center gap-2 text-lg font-bold text-gold-300">
+            <Image src="/icon.png" alt="" width={32} height={32} className="h-8 w-8" />
             Robbin Good
           </a>
 
