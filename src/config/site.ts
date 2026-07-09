@@ -24,9 +24,9 @@ export const siteConfig = {
   // "Chart goes live at launch" fallback instead of the iframe embed.
   pairUrl: "TODO_PAIR_URL",
 
-  // TODO: replace with real social links
+  // TODO: replace with the real Telegram link
   socials: {
-    twitter: "https://x.com/TODO_ROBBINGOOD",
+    twitter: "https://x.com/RobbinGoodX",
     telegram: "https://t.me/TODO_ROBBINGOOD",
   },
 } as const;

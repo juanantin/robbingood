@@ -1,13 +1,13 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Button } from "./ui/Button";
 import { FloatingBackground } from "./FloatingBackground";
 import { CopyCAButton } from "./CopyCAButton";
 import { HeroStoryClip } from "./HeroStoryClip";
+import { GlitteringLogo } from "./GlitteringLogo";
 
 function isDexscreenerConfigured() {
   return (
@@ -69,14 +69,7 @@ export function Hero() {
             style={{ y: logoY, opacity: logoOpacity }}
             className="mx-auto w-full max-w-md sm:mx-0 sm:max-w-lg"
           >
-            <Image
-              src="/logo-wordmark.png"
-              alt="Robbin Good ($GOOD)"
-              width={1536}
-              height={1024}
-              priority
-              className="h-auto w-full drop-shadow-[0_8px_24px_rgba(0,0,0,0.55)]"
-            />
+            <GlitteringLogo />
           </motion.div>
 
           <motion.p

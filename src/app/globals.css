@@ -93,3 +93,24 @@ body {
 .animate-float-slower {
   animation: float-slower 8s ease-in-out infinite;
 }
+
+/* Golden shine sweep, clipped to the logo wordmark's own shape via an inline
+   mask-image (see GlitteringLogo.tsx) — kept out of this file because
+   Turbopack's CSS pipeline silently drops rules that reference a public/
+   asset via url() here. */
+.logo-shine {
+  animation: logo-shine-sweep 5s linear infinite;
+}
+
+@keyframes logo-shine-sweep {
+  0% {
+    background-position: -50% 0%;
+  }
+  55% {
+    background-position: 140% 0%;
+  }
+  100% {
+    background-position: 140% 0%;
+  }
+}
+
