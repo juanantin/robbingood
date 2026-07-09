@@ -54,7 +54,13 @@ export function Header() {
           >
             <TelegramIcon className="h-5 w-5" />
           </a>
-          <Button href="#buy" variant="gold" className="px-5 py-2 text-xs">
+          <Button
+            href={siteConfig.dexUrl}
+            target="_blank"
+            rel="noreferrer"
+            variant="gold"
+            className="px-5 py-2 text-xs"
+          >
             Buy $GOOD
           </Button>
         </div>
@@ -92,7 +98,14 @@ export function Header() {
                 <TelegramIcon className="h-5 w-5" />
               </a>
             </div>
-            <Button href="#buy" variant="gold" onClick={() => setOpen(false)} className="mt-2">
+            <Button
+              href={siteConfig.dexUrl}
+              target="_blank"
+              rel="noreferrer"
+              variant="gold"
+              onClick={() => setOpen(false)}
+              className="mt-2"
+            >
               Buy $GOOD
             </Button>
           </nav>

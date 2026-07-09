@@ -6,6 +6,14 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Button } from "./ui/Button";
 import { FloatingBackground } from "./FloatingBackground";
+import { CopyCAButton } from "./CopyCAButton";
+
+function isDexscreenerConfigured() {
+  return (
+    siteConfig.pairUrl.startsWith("https://dexscreener.com/") ||
+    siteConfig.pairUrl.startsWith("https://www.dexscreener.com/")
+  );
+}
 
 const stats = [
   { label: "Ticker", value: siteConfig.ticker },
@@ -45,21 +53,12 @@ export function Hero() {
       <FloatingBackground />
 
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
-        <motion.p
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="font-display inline-block rounded-full border border-gold-500/50 bg-gold-500/10 px-4 py-1 text-xs font-semibold tracking-[0.25em] text-gold-300 uppercase"
-        >
-          Sherwood is calling
-        </motion.p>
-
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+          transition={{ duration: 0.7 }}
           style={{ y: logoY, opacity: logoOpacity }}
-          className="mx-auto mt-6 w-full max-w-md sm:max-w-lg"
+          className="mx-auto w-full max-w-md sm:max-w-lg"
         >
           <Image
             src="/logo-wordmark.png"
@@ -77,7 +76,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="font-display mt-2 text-xl font-semibold text-gold-300 sm:text-2xl"
         >
-          &ldquo;Steal from the rich. Gib to the poors.&rdquo; 🏹
+          &ldquo;Steal from the rich. Gib to the poor.&rdquo; 🏹
         </motion.p>
 
         <motion.p
@@ -95,12 +94,18 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.4 }}
           className="mt-9 flex flex-wrap items-center justify-center gap-4"
         >
-          <Button href="#buy" variant="gold">
+          <Button href={siteConfig.dexUrl} target="_blank" rel="noreferrer" variant="gold">
             Buy $GOOD
           </Button>
-          <Button href="#buy" variant="ghost">
+          <Button
+            href={isDexscreenerConfigured() ? siteConfig.pairUrl : "https://dexscreener.com"}
+            target="_blank"
+            rel="noreferrer"
+            variant="ghost"
+          >
             View Chart
           </Button>
+          <CopyCAButton address={siteConfig.contractAddress} />
         </motion.div>
 
         <motion.div

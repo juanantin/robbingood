@@ -3,12 +3,11 @@
 export const siteConfig = {
   name: "Robbin Good",
   ticker: "$GOOD",
-  tagline: "Steal from the rich. Gib to the poors. 🏹",
+  tagline: "Steal from the rich. Gib to the poor. 🏹",
   pitch:
     "A 0/0 tax meme coin that rewards the community for helping it grow — no yield, no fake utility, just memes, community, and daily rewards.",
 
-  // TODO: set the deployed chain, e.g. "Ethereum", "Base", "Solana", "BSC"
-  chain: "TODO — set the blockchain",
+  chain: "Robin Hood",
 
   supply: "1,000,000,000",
   buyTax: "0%",

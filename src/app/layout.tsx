@@ -13,7 +13,7 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const title = "Robbin Good ($GOOD) — Steal from the rich. Gib to the poors.";
+const title = "Robbin Good ($GOOD) — Steal from the rich. Gib to the poor.";
 const description =
   "A 0/0 tax meme coin that rewards the community for helping it grow — no yield, no fake utility, just memes, community, and daily rewards.";
 
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    images: ["/og-image.svg"],
+    images: ["/hero-bg.webp"],
   },
 };
 

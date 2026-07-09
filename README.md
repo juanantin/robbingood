@@ -1,6 +1,6 @@
 # Robbin Good ($GOOD)
 
-> "Steal from the rich. Gib to the poors." 🏹
+> "Steal from the rich. Gib to the poor." 🏹
 
 A single-page, production-ready marketing site for the **$GOOD** meme coin. Pure frontend — no backend, no wallet connection, no on-chain interaction. Built with Next.js (App Router) + TypeScript + Tailwind CSS + Framer Motion.
 
@@ -25,16 +25,14 @@ Everything you need to customize lives in **one file**: [`src/config/site.ts`](.
 
 | Field | What it is | Where it shows up |
 | --- | --- | --- |
-| `contractAddress` | The deployed token contract address | Contract & Buy section, footer (copy-to-clipboard pill) |
-| `chain` | Blockchain the token is deployed on (e.g. "Base", "Solana") | Hero stat chips |
-| `dexUrl` | Your DEX swap link (Uniswap, Raydium, etc.) | "Buy on DEX" buttons |
-| `pairUrl` | A real `https://dexscreener.com/...` pair URL | Live chart embed — until this is set to a real Dexscreener pair link, the site shows a "Chart goes live at launch" fallback panel instead of the iframe |
+| `contractAddress` | The deployed token contract address | Hero "CA" copy button, footer (copy-to-clipboard pill) |
+| `dexUrl` | Your DEX swap link (Uniswap, Raydium, etc.) | "Buy $GOOD" buttons (header, hero) |
+| `pairUrl` | A real `https://dexscreener.com/...` pair URL | "View Chart" buttons link here once set; otherwise they fall back to `dexscreener.com` |
 | `socials.twitter` / `socials.telegram` | Your social links | Header, footer |
 
-Search the repo for `TODO` to find every remaining placeholder, including:
+`chain` is already set to "Robin Hood" — change it in `src/config/site.ts` if you deploy to a different network.
 
-- **Logo** — the header/footer currently use a text wordmark ("Robbin Good 🏹"). Swap in a real logo image inside `src/components/Header.tsx` and `src/components/Footer.tsx` once you have one.
-- **OG image** — `public/og-image.svg` is a placeholder social-share card generated with CSS/SVG. Replace it with real artwork once the logo is ready (referenced from `src/app/layout.tsx`).
+Search the repo for `TODO` to find every remaining placeholder.
 
 ## Project structure
 
@@ -48,11 +46,10 @@ src/
     site.ts          # all TODO placeholders in one place
   components/
     Header.tsx            # sticky nav, smooth-scroll links, Buy CTA, socials
-    Hero.tsx               # headline, tagline, CTAs, stat chips, animated bg
-    FloatingBackground.tsx # floating coins/arrows + forest silhouette
-    ContractBuy.tsx        # copyable contract address, DEX/chart buttons
-    CopyAddressPill.tsx    # one-click copy with "Copied!" toast
-    DexscreenerEmbed.tsx   # live chart iframe with graceful fallback
+    Hero.tsx               # logo wordmark w/ scroll parallax, tagline, CTAs, stat chips
+    FloatingBackground.tsx # floating coins/arrows
+    CopyAddressPill.tsx    # one-click copy with "Copied!" toast (footer)
+    CopyCAButton.tsx       # one-click copy CA button (hero)
     HowItWorks.tsx
     CommunityRewards.tsx
     QuestBoard.tsx         # RPG bounty-board styled quest list
