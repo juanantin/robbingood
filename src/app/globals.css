@@ -63,23 +63,6 @@ body {
   font-family: var(--font-display), "Cinzel", serif;
 }
 
-/* Parchment paper grain, built from pure CSS gradients (no image assets) */
-.bg-parchment-texture {
-  background-color: var(--color-parchment-100);
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(154, 122, 68, 0.10) 0%, transparent 45%),
-    radial-gradient(circle at 80% 60%, rgba(154, 122, 68, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 50% 90%, rgba(90, 66, 30, 0.06) 0%, transparent 60%);
-}
-
-.bg-forest-texture {
-  background-color: var(--color-forest-900);
-  background-image:
-    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 40%),
-    radial-gradient(circle at 85% 30%, rgba(224, 167, 35, 0.08) 0%, transparent 45%),
-    radial-gradient(circle at 50% 100%, rgba(0, 0, 0, 0.35) 0%, transparent 60%);
-}
-
 .text-outline-gold {
   -webkit-text-stroke: 1px var(--color-gold-600);
 }

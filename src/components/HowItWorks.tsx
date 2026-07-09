@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeading } from "./ui/SectionHeading";
+import { SectionBackground } from "./SectionBackground";
 
 const cards = [
   { emoji: "🏹", title: "0% Buy Tax", body: "No hidden fees on the way in." },
@@ -16,8 +17,9 @@ const cards = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-parchment-texture py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+    <section id="how-it-works" className="relative overflow-hidden py-20 sm:py-28">
+      <SectionBackground tone="light" />
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
         <SectionHeading
           eyebrow="No fine print"
           title="How It Works"

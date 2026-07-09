@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeading } from "./ui/SectionHeading";
+import { SectionBackground } from "./SectionBackground";
 
 const contributions = [
   { emoji: "🎨", label: "Creating memes" },
@@ -13,7 +14,8 @@ const contributions = [
 
 export function CommunityRewards() {
   return (
-    <section id="rewards" className="relative overflow-hidden bg-forest-texture py-20 sm:py-28">
+    <section id="rewards" className="relative overflow-hidden py-20 sm:py-28">
+      <SectionBackground tone="dark" />
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6">
         <SectionHeading
           light

@@ -46,83 +46,88 @@ export function Hero() {
           alt=""
           fill
           priority
-          className="object-cover object-[65%_center] sm:object-center"
+          className="object-cover object-[72%_center] sm:object-[68%_center]"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-gradient-to-b from-forest-950/85 via-forest-950/60 to-forest-950/95" />
+      {/* Darken only the left side, where the text sits, so the character on the right stays bright */}
+      <div className="absolute inset-0 bg-gradient-to-r from-forest-950/80 via-forest-950/35 to-transparent sm:from-forest-950/85 sm:via-forest-950/30 sm:to-transparent" />
+      {/* Seam fade so the hero blends into the next section */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-forest-950/95" />
       <FloatingBackground />
 
-      <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          style={{ y: logoY, opacity: logoOpacity }}
-          className="mx-auto w-full max-w-md sm:max-w-lg"
-        >
-          <Image
-            src="/logo-wordmark.png"
-            alt="Robbin Good ($GOOD)"
-            width={1536}
-            height={1024}
-            priority
-            className="h-auto w-full drop-shadow-[0_8px_24px_rgba(0,0,0,0.55)]"
-          />
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-display mt-2 text-xl font-semibold text-gold-300 sm:text-2xl"
-        >
-          &ldquo;Steal from the rich. Gib to the poor.&rdquo; 🏹
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="mx-auto mt-6 max-w-2xl text-base text-parchment-200 sm:text-lg"
-        >
-          {siteConfig.pitch}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4 }}
-          className="mt-9 flex flex-wrap items-center justify-center gap-4"
-        >
-          <Button href={siteConfig.dexUrl} target="_blank" rel="noreferrer" variant="gold">
-            Buy $GOOD
-          </Button>
-          <Button
-            href={isDexscreenerConfigured() ? siteConfig.pairUrl : "https://dexscreener.com"}
-            target="_blank"
-            rel="noreferrer"
-            variant="ghost"
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="mx-auto max-w-xl text-center sm:mx-0 sm:text-left">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            style={{ y: logoY, opacity: logoOpacity }}
+            className="mx-auto w-full max-w-md sm:mx-0 sm:max-w-lg"
           >
-            View Chart
-          </Button>
-          <CopyCAButton address={siteConfig.contractAddress} />
-        </motion.div>
+            <Image
+              src="/logo-wordmark.png"
+              alt="Robbin Good ($GOOD)"
+              width={1536}
+              height={1024}
+              priority
+              className="h-auto w-full drop-shadow-[0_8px_24px_rgba(0,0,0,0.55)]"
+            />
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-3"
-        >
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-full border border-parchment-100/15 bg-parchment-50/5 px-4 py-2 text-xs font-semibold text-parchment-100 backdrop-blur"
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="font-display mt-2 text-xl font-semibold text-gold-300 sm:text-2xl"
+          >
+            &ldquo;Steal from the rich. Gib to the poor.&rdquo; 🏹
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="mt-6 text-base text-parchment-200 sm:text-lg"
+          >
+            {siteConfig.pitch}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            className="mt-9 flex flex-wrap items-center justify-center gap-4 sm:justify-start"
+          >
+            <Button href={siteConfig.dexUrl} target="_blank" rel="noreferrer" variant="gold">
+              Buy $GOOD
+            </Button>
+            <Button
+              href={isDexscreenerConfigured() ? siteConfig.pairUrl : "https://dexscreener.com"}
+              target="_blank"
+              rel="noreferrer"
+              variant="ghost"
             >
-              <span className="text-gold-300">{stat.label}:</span> {stat.value}
-            </div>
-          ))}
-        </motion.div>
+              View Chart
+            </Button>
+            <CopyCAButton address={siteConfig.contractAddress} />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            className="mt-12 flex flex-wrap items-center justify-center gap-3 sm:justify-start"
+          >
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-full border border-parchment-100/15 bg-parchment-50/5 px-4 py-2 text-xs font-semibold text-parchment-100 backdrop-blur"
+              >
+                <span className="text-gold-300">{stat.label}:</span> {stat.value}
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

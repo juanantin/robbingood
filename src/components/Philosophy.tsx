@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SectionBackground } from "./SectionBackground";
 
 const quotes = [
   "Instead of rewarding the richest wallets, Robbin Good rewards the people creating the most value.",
@@ -10,8 +11,9 @@ const quotes = [
 
 export function Philosophy() {
   return (
-    <section className="bg-forest-texture py-20 sm:py-28">
-      <div className="mx-auto max-w-3xl space-y-12 px-4 sm:px-6">
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      <SectionBackground tone="dark" />
+      <div className="relative mx-auto max-w-3xl space-y-12 px-4 sm:px-6">
         {quotes.map((quote, i) => (
           <motion.blockquote
             key={quote}

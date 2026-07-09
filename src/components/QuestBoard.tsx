@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeading } from "./ui/SectionHeading";
+import { SectionBackground } from "./SectionBackground";
 
 const bounties = [
   { reward: "10 GOOD", desc: "A crypto KOL likes your post" },
@@ -21,8 +22,9 @@ const questTypes = [
 
 export function QuestBoard() {
   return (
-    <section id="quests" className="bg-parchment-texture py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
+    <section id="quests" className="relative overflow-hidden py-20 sm:py-28">
+      <SectionBackground tone="light" />
+      <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
         <SectionHeading eyebrow="Pin your bounty" title="The Quest Board" subtitle="$GOOD Rewards" />
 
         {/* wooden board */}

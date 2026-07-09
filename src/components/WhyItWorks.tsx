@@ -2,11 +2,13 @@
 
 import { motion } from "framer-motion";
 import { SectionHeading } from "./ui/SectionHeading";
+import { SectionBackground } from "./SectionBackground";
 
 export function WhyItWorks() {
   return (
-    <section id="community" className="bg-parchment-texture py-20 sm:py-28">
-      <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
+    <section id="community" className="relative overflow-hidden py-20 sm:py-28">
+      <SectionBackground tone="light" />
+      <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
         <SectionHeading eyebrow="The unfair advantage" title="Why It Works" />
 
         <motion.div
