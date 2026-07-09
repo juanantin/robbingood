@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site";
 import { Button } from "./ui/Button";
 import { FloatingBackground } from "./FloatingBackground";
 import { CopyCAButton } from "./CopyCAButton";
+import { HeroStoryClip } from "./HeroStoryClip";
 
 function isDexscreenerConfigured() {
   return (
@@ -126,6 +127,15 @@ export function Hero() {
                 <span className="text-gold-300">{stat.label}:</span> {stat.value}
               </div>
             ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.6 }}
+            className="mx-auto sm:mx-0"
+          >
+            <HeroStoryClip />
           </motion.div>
         </div>
       </div>
