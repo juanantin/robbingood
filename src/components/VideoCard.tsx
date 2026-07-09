@@ -3,7 +3,19 @@
 import { useRef, useState } from "react";
 import { SpeakerOnIcon, SpeakerOffIcon } from "./icons";
 
-export function HeroStoryClip() {
+export function VideoCard({
+  webmSrc,
+  mp4Src,
+  poster,
+  caption,
+  className = "",
+}: {
+  webmSrc: string;
+  mp4Src: string;
+  poster: string;
+  caption: string;
+  className?: string;
+}) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
 
@@ -15,19 +27,21 @@ export function HeroStoryClip() {
   }
 
   return (
-    <div className="mt-10 w-full max-w-xs overflow-hidden rounded-2xl border border-gold-500/40 bg-forest-950/60 shadow-deep backdrop-blur sm:max-w-md lg:max-w-lg">
+    <div
+      className={`w-full overflow-hidden rounded-2xl border border-gold-500/40 bg-forest-950/60 shadow-deep backdrop-blur ${className}`}
+    >
       <div className="relative aspect-video">
         <video
           ref={videoRef}
-          poster="/hero-story-poster.jpg"
+          poster={poster}
           autoPlay
           loop
           muted
           playsInline
           className="h-full w-full object-cover"
         >
-          <source src="/hero-story.webm" type="video/webm" />
-          <source src="/hero-story.mp4" type="video/mp4" />
+          <source src={webmSrc} type="video/webm" />
+          <source src={mp4Src} type="video/mp4" />
         </video>
         <button
           onClick={toggleMute}
@@ -37,9 +51,7 @@ export function HeroStoryClip() {
           {muted ? <SpeakerOffIcon className="h-4 w-4" /> : <SpeakerOnIcon className="h-4 w-4" />}
         </button>
       </div>
-      <p className="font-display px-4 py-3 text-sm font-semibold tracking-wide text-gold-300 uppercase">
-        The Legend of Robbin Good 🏹
-      </p>
+      <p className="font-display px-4 py-3 text-sm font-semibold tracking-wide text-gold-300 uppercase">{caption}</p>
     </div>
   );
 }

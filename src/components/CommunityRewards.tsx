@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "./ui/SectionHeading";
 import { SectionBackground } from "./SectionBackground";
+import { VideoCard } from "./VideoCard";
 
 const contributions = [
   { emoji: "🎨", label: "Creating memes" },
@@ -23,6 +24,21 @@ export function CommunityRewards() {
           title="Community Rewards"
           subtitle="Every day, the treasury (the public DEV WALLET) distributes tokens to community members who complete quests."
         />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="mx-auto mt-10 max-w-2xl"
+        >
+          <VideoCard
+            webmSrc="/community-story.webm"
+            mp4Src="/community-story.mp4"
+            poster="/community-story-poster.jpg"
+            caption="From the Vault to the Village 🏹💰"
+          />
+        </motion.div>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
           {contributions.map((item, i) => (

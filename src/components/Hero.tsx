@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site";
 import { Button } from "./ui/Button";
 import { FloatingBackground } from "./FloatingBackground";
 import { CopyCAButton } from "./CopyCAButton";
-import { HeroStoryClip } from "./HeroStoryClip";
+import { VideoCard } from "./VideoCard";
 import { GlitteringLogo } from "./GlitteringLogo";
 
 function isDexscreenerConfigured() {
@@ -132,7 +132,13 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.6 }}
             className="mx-auto sm:mx-0"
           >
-            <HeroStoryClip />
+            <VideoCard
+              webmSrc="/hero-story.webm"
+              mp4Src="/hero-story.mp4"
+              poster="/hero-story-poster.jpg"
+              caption="The Legend of Robbin Good 🏹"
+              className="max-w-xs sm:max-w-md lg:max-w-lg"
+            />
           </motion.div>
         </div>
       </div>
