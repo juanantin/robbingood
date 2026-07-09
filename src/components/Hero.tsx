@@ -46,7 +46,7 @@ export function Hero() {
           alt=""
           fill
           priority
-          className="object-cover object-[72%_center] sm:object-[68%_center]"
+          className="object-contain object-top sm:object-cover sm:object-[68%_center]"
         />
       </motion.div>
       {/* Darken only the left side, where the text sits, so the character on the right stays bright */}
