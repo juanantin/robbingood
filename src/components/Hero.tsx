@@ -130,14 +130,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
-            className="mx-auto sm:mx-0"
+            className="mx-auto max-w-2xl"
           >
             <VideoCard
               webmSrc="/hero-story.webm"
               mp4Src="/hero-story.mp4"
               poster="/hero-story-poster.jpg"
               caption="The Legend of Robbin Good 🏹"
-              className="max-w-xs sm:max-w-md lg:max-w-lg"
             />
           </motion.div>
         </div>
