@@ -42,13 +42,17 @@ export function Hero() {
       className="relative overflow-hidden bg-forest-950 pt-20 pb-28 sm:pt-28 sm:pb-36"
     >
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
-        <Image
-          src="/hero-bg.webp"
-          alt=""
-          fill
-          priority
-          className="object-contain object-top sm:object-cover sm:object-[68%_center]"
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/hero-bg-loop-poster.jpg"
+          className="h-full w-full object-contain object-top sm:object-cover sm:object-[68%_center]"
+        >
+          <source src="/hero-bg-loop.webm" type="video/webm" />
+          <source src="/hero-bg-loop.mp4" type="video/mp4" />
+        </video>
       </motion.div>
       {/* Darken only the left side, where the text sits, so the character on the right stays bright */}
       <div className="absolute inset-0 bg-gradient-to-r from-forest-950/80 via-forest-950/35 to-transparent sm:from-forest-950/85 sm:via-forest-950/30 sm:to-transparent" />
