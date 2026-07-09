@@ -13,8 +13,7 @@ export const siteConfig = {
   buyTax: "0%",
   sellTax: "0%",
 
-  // TODO: replace with the real deployed contract address
-  contractAddress: "TODO_CONTRACT_ADDRESS",
+  contractAddress: "0xc11db44f485040c7dc2c6df1fdf001ec180b88e1",
 
   // TODO: replace with the real DEX swap link (Uniswap / Raydium / etc.)
   dexUrl: "https://TODO-set-your-dex-swap-link.example",
