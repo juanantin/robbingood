@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --background: #faf3e3;
+  --foreground: #241a0f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-display: var(--font-cinzel);
+  --font-sans: var(--font-inter);
+
+  /* Sherwood Forest greens */
+  --color-forest-950: #0a1a10;
+  --color-forest-900: #0f2818;
+  --color-forest-800: #163b22;
+  --color-forest-700: #1d4d2c;
+  --color-forest-600: #256339;
+  --color-forest-500: #2f7a48;
+  --color-forest-400: #4a9c63;
+  --color-forest-300: #7fc298;
+  --color-forest-200: #b8e0c4;
+  --color-forest-100: #dcf0e2;
+  --color-forest-50: #f0f9f2;
+
+  /* Gold / amber accents */
+  --color-gold-900: #5c3d05;
+  --color-gold-800: #8a5c08;
+  --color-gold-700: #a8720a;
+  --color-gold-600: #c68a0e;
+  --color-gold-500: #e0a723;
+  --color-gold-400: #eec24f;
+  --color-gold-300: #f5d886;
+  --color-gold-200: #fae8b8;
+  --color-gold-100: #fdf3dc;
+  --color-gold-50: #fffaf0;
+
+  /* Parchment / cream */
+  --color-parchment-900: #3a2f1f;
+  --color-parchment-800: #5c4a30;
+  --color-parchment-700: #7a6440;
+  --color-parchment-600: #9c8355;
+  --color-parchment-500: #c2a672;
+  --color-parchment-400: #dcc596;
+  --color-parchment-300: #ecdcb8;
+  --color-parchment-200: #f5ead2;
+  --color-parchment-100: #faf3e3;
+  --color-parchment-50: #fdf9ef;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-parchment-100);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), "Cinzel", serif;
+}
+
+/* Parchment paper grain, built from pure CSS gradients (no image assets) */
+.bg-parchment-texture {
+  background-color: var(--color-parchment-100);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(154, 122, 68, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 80% 60%, rgba(154, 122, 68, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(90, 66, 30, 0.06) 0%, transparent 60%);
+}
+
+.bg-forest-texture {
+  background-color: var(--color-forest-900);
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(224, 167, 35, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 50% 100%, rgba(0, 0, 0, 0.35) 0%, transparent 60%);
+}
+
+.text-outline-gold {
+  -webkit-text-stroke: 1px var(--color-gold-600);
+}
+
+.shadow-deep {
+  box-shadow: 0 20px 50px -15px rgba(10, 26, 16, 0.45), 0 8px 20px -8px rgba(10, 26, 16, 0.35);
+}
+
+::selection {
+  background: var(--color-gold-400);
+  color: var(--color-forest-950);
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(6deg); }
+}
+
+@keyframes float-slower {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(-4deg); }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float-slower 8s ease-in-out infinite;
+}
