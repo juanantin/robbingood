@@ -1,7 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { siteConfig } from "@/config/site";
 import { Button } from "./ui/Button";
 import { FloatingBackground } from "./FloatingBackground";
@@ -15,15 +16,31 @@ const stats = [
 ];
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const logoY = useTransform(scrollYProgress, [0, 1], ["0%", "-35%"]);
+  const logoOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
+
   return (
-    <section id="top" className="relative overflow-hidden bg-forest-950 pt-20 pb-28 sm:pt-28 sm:pb-36">
-      <Image
-        src="/hero-bg.webp"
-        alt=""
-        fill
-        priority
-        className="object-cover object-[65%_center] sm:object-center"
-      />
+    <section
+      ref={sectionRef}
+      id="top"
+      className="relative overflow-hidden bg-forest-950 pt-20 pb-28 sm:pt-28 sm:pb-36"
+    >
+      <motion.div className="absolute inset-0" style={{ y: bgY }}>
+        <Image
+          src="/hero-bg.webp"
+          alt=""
+          fill
+          priority
+          className="object-cover object-[65%_center] sm:object-center"
+        />
+      </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-forest-950/85 via-forest-950/60 to-forest-950/95" />
       <FloatingBackground />
 
@@ -37,20 +54,28 @@ export function Hero() {
           Sherwood is calling
         </motion.p>
 
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display mt-6 text-4xl font-bold text-parchment-50 sm:text-6xl"
+          style={{ y: logoY, opacity: logoOpacity }}
+          className="mx-auto mt-6 w-full max-w-md sm:max-w-lg"
         >
-          Robbin Good <span className="text-gold-300">($GOOD)</span>
-        </motion.h1>
+          <Image
+            src="/logo-wordmark.png"
+            alt="Robbin Good ($GOOD)"
+            width={1536}
+            height={1024}
+            priority
+            className="h-auto w-full drop-shadow-[0_8px_24px_rgba(0,0,0,0.55)]"
+          />
+        </motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="font-display mt-4 text-xl font-semibold text-gold-300 sm:text-2xl"
+          className="font-display mt-2 text-xl font-semibold text-gold-300 sm:text-2xl"
         >
           &ldquo;Steal from the rich. Gib to the poors.&rdquo; 🏹
         </motion.p>
