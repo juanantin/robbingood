@@ -8,8 +8,10 @@ import { XIcon, TelegramIcon } from "./icons";
 
 const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Quests", href: "#quests" },
   { label: "Rewards", href: "#rewards" },
+  { label: "Quests", href: "#quests" },
+  { label: "Burn $GOOD", href: "#burn" },
+  { label: "Flywheel", href: "#flywheel" },
 ];
 
 export function Header() {
