@@ -10,7 +10,6 @@ const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "Quests", href: "#quests" },
   { label: "Rewards", href: "#rewards" },
-  { label: "Community", href: "#community" },
 ];
 
 export function Header() {

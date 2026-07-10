@@ -6,7 +6,6 @@ import { QuestBoard } from "@/components/QuestBoard";
 import { BurnGood } from "@/components/BurnGood";
 import { GoodFlywheel } from "@/components/GoodFlywheel";
 import { Philosophy } from "@/components/Philosophy";
-import { WhyItWorks } from "@/components/WhyItWorks";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -21,7 +20,6 @@ export default function Home() {
         <BurnGood />
         <GoodFlywheel />
         <Philosophy />
-        <WhyItWorks />
       </main>
       <Footer />
     </div>
