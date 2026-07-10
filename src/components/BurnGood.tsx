@@ -46,7 +46,10 @@ export function BurnGood() {
   const configured = isBurnDataConfigured();
 
   return (
-    <section id="burn" className="relative overflow-hidden bg-forest-950 py-20 sm:py-28">
+    <section
+      id="burn"
+      className="relative overflow-hidden bg-forest-950 pt-[calc(56.25vw+2rem)] pb-16 sm:py-28"
+    >
       <div className="absolute inset-0">
         <video
           autoPlay
@@ -54,7 +57,7 @@ export function BurnGood() {
           muted
           playsInline
           poster="/burn-bg-poster.jpg"
-          className="h-full w-full origin-left translate-y-[4%] scale-115 object-cover"
+          className="h-full w-full object-contain object-top sm:origin-left sm:translate-y-[4%] sm:scale-115 sm:object-cover"
         >
           <source src="/burn-bg.mp4" type="video/mp4" />
         </video>
