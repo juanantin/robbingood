@@ -39,7 +39,7 @@ export function Hero() {
     <section
       ref={sectionRef}
       id="top"
-      className="relative overflow-hidden bg-forest-950 pt-20 pb-28 sm:pt-28 sm:pb-36"
+      className="relative overflow-hidden bg-forest-950 pt-[calc(56.25vw+2.5rem)] pb-28 sm:pt-28 sm:pb-36"
     >
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
         <video
