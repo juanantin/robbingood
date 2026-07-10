@@ -10,7 +10,7 @@ const navLinks = [
   { label: "How It Works", href: "#how-it-works" },
   { label: "Rewards", href: "#rewards" },
   { label: "Quests", href: "#quests" },
-  { label: "Burn $GOOD", href: "#burn" },
+  { label: "Burn", href: "#burn" },
   { label: "Flywheel", href: "#flywheel" },
 ];
 
