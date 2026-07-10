@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { HowItWorks } from "@/components/HowItWorks";
 import { CommunityRewards } from "@/components/CommunityRewards";
 import { QuestBoard } from "@/components/QuestBoard";
+import { BurnGood } from "@/components/BurnGood";
 import { GoodFlywheel } from "@/components/GoodFlywheel";
 import { Philosophy } from "@/components/Philosophy";
 import { WhyItWorks } from "@/components/WhyItWorks";
@@ -17,6 +18,7 @@ export default function Home() {
         <HowItWorks />
         <CommunityRewards />
         <QuestBoard />
+        <BurnGood />
         <GoodFlywheel />
         <Philosophy />
         <WhyItWorks />
