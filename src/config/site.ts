@@ -20,9 +20,8 @@ export const siteConfig = {
 
   pairUrl: "https://dexscreener.com/robinhood/0xc11db44f485040c7dc2c6df1fdf001ec180b88e1",
 
-  // TODO: replace with the live burnt $GOOD amount and % of total supply burned.
-  burnedAmount: "TODO_BURNED_AMOUNT",
-  burnedSupplyPercent: "TODO_BURNED_PERCENT",
+  burnedAmount: "8,178,669",
+  burnedSupplyPercent: "0.82%",
 
   socials: {
     twitter: "https://x.com/RobbinGoodX",
