@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeading } from "./ui/SectionHeading";
 import { SectionBackground } from "./SectionBackground";
@@ -28,7 +29,14 @@ export function QuestBoard() {
         <SectionHeading eyebrow="Pin your bounty" title="The Quest Board" subtitle="$GOOD Rewards" />
 
         {/* wooden board */}
-        <div className="mt-14 rounded-3xl border-8 border-parchment-800 bg-linear-to-b from-[#7a5a34] to-[#5c4326] p-4 shadow-deep sm:p-8">
+        <div
+          className="mt-14 rounded-3xl border-8 border-parchment-800 p-4 shadow-deep sm:p-8"
+          style={{
+            backgroundImage: "url(/quest-wood.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {bounties.map((b, i) => (
               <motion.div
@@ -37,9 +45,20 @@ export function QuestBoard() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="relative rotate-[-1deg] rounded-lg border border-parchment-500/40 bg-parchment-100 p-5 shadow-deep even:rotate-[1deg]"
+                className="relative rotate-[-1deg] rounded-lg border border-parchment-500/40 p-5 shadow-deep even:rotate-[1deg]"
+                style={{
+                  backgroundImage: "url(/quest-parchment.jpg)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                <span className="absolute -top-3 left-1/2 h-5 w-5 -translate-x-1/2 rounded-full bg-gold-600 shadow-md" />
+                <Image
+                  src="/quest-nail.png"
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="absolute -top-3.5 left-1/2 h-7 w-7 -translate-x-1/2 drop-shadow-md"
+                />
                 <div className="font-display inline-block rounded-full bg-gold-400 px-3 py-1 text-xs font-bold tracking-wide text-forest-950 uppercase">
                   🪙 {b.reward}
                 </div>
