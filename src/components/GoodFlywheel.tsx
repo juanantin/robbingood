@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeading } from "./ui/SectionHeading";
 import { SectionBackground } from "./SectionBackground";
@@ -69,9 +70,14 @@ export function GoodFlywheel() {
               </motion.div>
 
               {i < steps.length - 1 ? (
-                <span aria-hidden className="my-3 text-2xl text-gold-400">
-                  ⬇️
-                </span>
+                <Image
+                  src="/flywheel-arrow.png"
+                  alt=""
+                  aria-hidden
+                  width={40}
+                  height={152}
+                  className="my-2 h-16 w-auto drop-shadow-md sm:h-20"
+                />
               ) : null}
             </div>
           ))}
