@@ -1,11 +1,35 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView, animate } from "framer-motion";
 import { siteConfig } from "@/config/site";
 
 function isBurnDataConfigured() {
   return (
     !siteConfig.burnedAmount.startsWith("TODO_") && !siteConfig.burnedSupplyPercent.startsWith("TODO_")
+  );
+}
+
+function CountUp({ value, format, className }: { value: string; format: (n: number) => string; className?: string }) {
+  const target = Number(value.replace(/[^0-9.]/g, ""));
+  const ref = useRef<HTMLParagraphElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    const controls = animate(0, target, {
+      duration: 1.2,
+      ease: "easeOut",
+      onUpdate: setDisplay,
+    });
+    return () => controls.stop();
+  }, [inView, target]);
+
+  return (
+    <p ref={ref} className={className}>
+      {format(display)}
+    </p>
   );
 }
 
@@ -68,18 +92,22 @@ export function BurnGood() {
           {configured ? (
             <div className="mt-8 space-y-6 sm:space-y-8">
               <div>
-                <p className="font-display text-5xl font-extrabold text-gold-300 sm:text-6xl">
-                  {siteConfig.burnedAmount}
-                </p>
+                <CountUp
+                  value={siteConfig.burnedAmount}
+                  format={(n) => Math.round(n).toLocaleString("en-US")}
+                  className="font-display text-5xl font-extrabold text-gold-300 sm:text-6xl"
+                />
                 <p className="mt-1 text-xs font-semibold tracking-wide text-parchment-200 uppercase">
                   $GOOD burnt forever
                 </p>
               </div>
 
               <div>
-                <p className="font-display text-3xl font-extrabold text-gold-300 sm:text-4xl">
-                  {siteConfig.burnedSupplyPercent}
-                </p>
+                <CountUp
+                  value={siteConfig.burnedSupplyPercent}
+                  format={(n) => `${n.toFixed(2)}%`}
+                  className="font-display text-3xl font-extrabold text-gold-300 sm:text-4xl"
+                />
                 <p className="mt-1 text-xs font-semibold tracking-wide text-parchment-200 uppercase">
                   of total supply
                 </p>
