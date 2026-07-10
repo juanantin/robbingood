@@ -57,7 +57,7 @@ export function BurnGood() {
           muted
           playsInline
           poster="/burn-bg-poster.jpg"
-          className="h-full w-full object-contain object-top sm:origin-left sm:translate-y-[4%] sm:scale-115 sm:object-cover"
+          className="h-full w-full origin-top-left scale-110 object-contain object-top sm:translate-y-[4%] sm:scale-115 sm:object-cover"
         >
           <source src="/burn-bg.mp4" type="video/mp4" />
         </video>
