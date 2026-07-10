@@ -95,9 +95,8 @@ export function BurnGood() {
           )}
 
           <p className="mt-8 text-sm text-parchment-200 sm:text-base">
-            On Robin Hood chain, every trade pays a 1% fee — and a part of that fee is burned on the spot,
-            permanently removed from circulation. No unlocks, no reversing it. The more the chain gets used, the
-            more $GOOD disappears for good.
+            On Robin Hood Chain, every trade pays a 1% fee, and a part of that is burned, permanently removed from
+            circulation. No unlocks, no reversing it. The more $GOOD trades, the more it disappears for good.
           </p>
         </motion.div>
       </div>
