@@ -9,6 +9,15 @@ function isBurnDataConfigured() {
   );
 }
 
+const embers = [
+  { left: "4%", bottom: "6%", size: 6, delay: 0, duration: 4.5 },
+  { left: "9%", bottom: "3%", size: 4, delay: 1.2, duration: 5.5 },
+  { left: "14%", bottom: "9%", size: 5, delay: 2.4, duration: 5 },
+  { left: "6%", bottom: "13%", size: 3, delay: 0.6, duration: 6.5 },
+  { left: "18%", bottom: "5%", size: 4, delay: 3, duration: 6 },
+  { left: "2%", bottom: "16%", size: 3, delay: 1.8, duration: 5.8 },
+];
+
 export function BurnGood() {
   const configured = isBurnDataConfigured();
 
@@ -30,6 +39,19 @@ export function BurnGood() {
       <div className="absolute inset-0 bg-gradient-to-l from-forest-950/90 via-forest-950/55 to-transparent sm:from-forest-950/92 sm:via-forest-950/25 sm:to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-b from-forest-950/60 via-transparent to-forest-950/95" />
 
+      {/* Embers drifting up from the fireplace */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        {embers.map((ember, i) => (
+          <motion.span
+            key={i}
+            className="absolute rounded-full bg-gold-400 shadow-[0_0_8px_3px_rgba(255,170,50,0.6)]"
+            style={{ left: ember.left, bottom: ember.bottom, width: ember.size, height: ember.size }}
+            animate={{ y: [0, -240], x: [0, 14, -10, 0], opacity: [0, 1, 1, 0] }}
+            transition={{ duration: ember.duration, delay: ember.delay, repeat: Infinity, ease: "easeOut" }}
+          />
+        ))}
+      </div>
+
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,7 +63,7 @@ export function BurnGood() {
           <p className="font-display text-xs font-semibold tracking-[0.3em] text-gold-300 uppercase">
             Deflationary by Design
           </p>
-          <h2 className="font-display mt-3 text-3xl font-bold text-parchment-50 sm:text-4xl">Burn $GOOD</h2>
+          <h2 className="text-fire font-display mt-3 text-3xl font-bold sm:text-4xl">Burn $GOOD</h2>
 
           {configured ? (
             <div className="mt-8 space-y-6 sm:space-y-8">
@@ -73,9 +95,9 @@ export function BurnGood() {
           )}
 
           <p className="mt-8 text-sm text-parchment-200 sm:text-base">
-            Every trade on the Robin Hood chain pays a small network fee — and instead of sitting in a wallet, part
-            of it is burned on the spot, permanently removed from circulation. No unlocks, no reversing it. The more
-            the chain gets used, the more $GOOD disappears for good.
+            On Robin Hood chain, every trade pays a 1% fee — and a part of that fee is burned on the spot,
+            permanently removed from circulation. No unlocks, no reversing it. The more the chain gets used, the
+            more $GOOD disappears for good.
           </p>
         </motion.div>
       </div>
