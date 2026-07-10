@@ -87,7 +87,7 @@ export function BurnGood() {
           <p className="font-display text-xs font-semibold tracking-[0.3em] text-gold-300 uppercase">
             Deflationary by Design
           </p>
-          <h2 className="text-fire font-display mt-3 text-3xl font-bold sm:text-4xl">Burn $GOOD</h2>
+          <h2 className="font-display mt-3 text-3xl font-bold text-parchment-50 sm:text-4xl">Burn $GOOD</h2>
 
           {configured ? (
             <div className="mt-8 space-y-6 sm:space-y-8">
@@ -95,7 +95,7 @@ export function BurnGood() {
                 <CountUp
                   value={siteConfig.burnedAmount}
                   format={(n) => Math.round(n).toLocaleString("en-US")}
-                  className="font-display text-5xl font-extrabold text-gold-300 sm:text-6xl"
+                  className="text-fire font-display text-5xl font-extrabold sm:text-6xl"
                 />
                 <p className="mt-1 text-xs font-semibold tracking-wide text-parchment-200 uppercase">
                   $GOOD burnt forever
@@ -106,7 +106,7 @@ export function BurnGood() {
                 <CountUp
                   value={siteConfig.burnedSupplyPercent}
                   format={(n) => `${n.toFixed(2)}%`}
-                  className="font-display text-3xl font-extrabold text-gold-300 sm:text-4xl"
+                  className="text-fire font-display text-3xl font-extrabold sm:text-4xl"
                 />
                 <p className="mt-1 text-xs font-semibold tracking-wide text-parchment-200 uppercase">
                   of total supply

@@ -101,8 +101,8 @@ body {
   background-clip: text;
   color: transparent;
   animation:
-    fire-shift 3s linear infinite,
-    fire-flicker 2.2s ease-in-out infinite;
+    fire-shift 3.5s linear infinite,
+    fire-flicker 3s ease-in-out infinite;
 }
 
 @keyframes fire-shift {
@@ -117,20 +117,20 @@ body {
 @keyframes fire-flicker {
   0%,
   100% {
-    filter: drop-shadow(0 0 6px rgba(255, 140, 0, 0.55)) drop-shadow(0 0 16px rgba(255, 80, 0, 0.35));
+    filter: drop-shadow(0 0 6px rgba(255, 140, 0, 0.5)) drop-shadow(0 0 14px rgba(255, 80, 0, 0.3));
     transform: scale(1);
   }
   25% {
-    filter: drop-shadow(0 0 10px rgba(255, 160, 20, 0.75)) drop-shadow(0 0 22px rgba(255, 90, 0, 0.5));
-    transform: scale(1.015) rotate(-0.3deg);
+    filter: drop-shadow(0 0 8px rgba(255, 160, 20, 0.6)) drop-shadow(0 0 17px rgba(255, 90, 0, 0.38));
+    transform: scale(1.006);
   }
   50% {
-    filter: drop-shadow(0 0 4px rgba(255, 120, 0, 0.4)) drop-shadow(0 0 10px rgba(255, 60, 0, 0.25));
-    transform: scale(0.99) rotate(0.2deg);
+    filter: drop-shadow(0 0 5px rgba(255, 120, 0, 0.4)) drop-shadow(0 0 12px rgba(255, 60, 0, 0.25));
+    transform: scale(0.996);
   }
   75% {
-    filter: drop-shadow(0 0 12px rgba(255, 170, 30, 0.8)) drop-shadow(0 0 24px rgba(255, 100, 0, 0.55));
-    transform: scale(1.02) rotate(-0.2deg);
+    filter: drop-shadow(0 0 9px rgba(255, 170, 30, 0.65)) drop-shadow(0 0 18px rgba(255, 100, 0, 0.4));
+    transform: scale(1.008);
   }
 }
 
